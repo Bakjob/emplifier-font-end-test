@@ -26,7 +26,7 @@ async function submitCv() {
   formData.append('cv', file.value)
 
   try {
-    const res = await fetch('https://your-api.com/upload-cv', {
+    const res = await fetch('https://localhost:8000/upload-cv', {
       method: 'POST',
       body: formData
     })
