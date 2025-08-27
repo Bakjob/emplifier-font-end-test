@@ -1,8 +1,6 @@
 <template>
   <div class="cv-upload">
-    <h2>Upload your CV</h2>
-    <input type="file" @change="onFileChange" />
-    <button @click="submitCv" :disabled="!file">Send CV</button>
+    <button @click="submitCv">Send CV</button>
   </div>
 </template>
 
@@ -20,15 +18,11 @@ function onFileChange(event) {
 
 // submit file to your API
 async function submitCv() {
-  if (!file.value) return
-
-  const formData = new FormData()
-  formData.append('cv', file.value)
+  console.log('submitting cv')
 
   try {
-    const res = await fetch('https://localhost:8000/upload-cv', {
+    const res = await fetch('http://localhost:8080/upload-cv', {
       method: 'POST',
-      body: formData
     })
 
     if (!res.ok) {
