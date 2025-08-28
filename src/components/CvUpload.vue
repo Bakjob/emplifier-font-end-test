@@ -21,7 +21,7 @@ async function submitCv() {
   console.log('submitting cv')
 
   try {
-    const res = await fetch('http://localhost:8080/upload-cv', {
+    const res = await fetch('http://localhost:8000/upload-cv', {
       method: 'POST',
     })
 
